@@ -1,0 +1,30 @@
+<div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+  <form class="card-body" [formGroup]="form" (ngSubmit)="submitData()">
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text">Email</span>
+      </label>
+      <input type="email" placeholder="email" class="input input-bordered" name="email" formControlName="email" />
+
+      <div *ngIf="form.get('email')?.invalid">
+        <small class="text-red-400">Email is required </small>
+      </div>
+    </div>
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text">Password</span>
+      </label>
+      <input type="password" placeholder="password" class="input input-bordered" name="password"
+        formControlName="password" />
+      <div *ngIf="form.get('password')?.invalid">
+        <small class="text-red-400">Email is required </small>
+      </div>
+
+    </div>
+    <div class="form-control mt-6">
+      <button class="btn btn-primary" type="submit">
+        Login
+      </button>
+    </div>
+  </form>
+</div>
